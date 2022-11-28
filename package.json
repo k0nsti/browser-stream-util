@@ -1,6 +1,11 @@
 {
   "name": "browser-stream-util",
   "version": "0.0.0-semantic-release",
+  "description": "utility functions for browser streams",
+  "keywords": [
+    "stream",
+    "util"
+  ],
   "publishConfig": {
     "access": "public"
   },
