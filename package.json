@@ -1,11 +1,6 @@
 {
   "name": "browser-stream-util",
   "version": "0.0.0-semantic-release",
-  "description": "utility functions for browser streams",
-  "keywords": [
-    "stream",
-    "util"
-  ],
   "publishConfig": {
     "access": "public"
   },
@@ -13,6 +8,11 @@
   "exports": {
     ".": "./src/string2stream.mjs"
   },
+  "description": "utility functions for browser streams",
+  "keywords": [
+    "stream",
+    "util"
+  ],
   "contributors": [
     {
       "name": "Markus Felten",
