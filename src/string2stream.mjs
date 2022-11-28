@@ -1,5 +1,5 @@
 /**
- * encodes a string into a stream.
+ * Encodes a string into a stream.
  * @param {string} str
  * @param {TextEncoder} encoder
  * @returns {ReadableStream}
