@@ -5,6 +5,9 @@
     "access": "public"
   },
   "sideEffects": false,
+  "exports": {
+    ".": "./src/string2stream.mjs"
+  },
   "contributors": [
     {
       "name": "Markus Felten",
