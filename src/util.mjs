@@ -12,3 +12,15 @@ export function string2Stream(str, encoder = new TextEncoder()) {
     }
   });
 }
+
+/**
+ * Delivers a stream with no data
+ * @returns {ReadableStream}
+ */
+export function emptyStream() {
+  return new ReadableStream({
+    async pull(controller) {
+      controller.close();
+    }
+  });
+}

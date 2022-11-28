@@ -1,5 +1,5 @@
 import test from "ava";
-import { string2Stream } from "browser-stream-util";
+import { string2Stream, emptyStream } from "browser-stream-util";
 
 test("string2Stream", async (t) => {
   const stream = string2Stream("ABCD");
@@ -7,6 +7,14 @@ test("string2Stream", async (t) => {
   const buffer = await readAll(stream.getReader());
 
   t.deepEqual(buffer, new Uint8Array([65, 66, 67, 68]));
+});
+
+test("emptyStream", async (t) => {
+  const stream = emptyStream();
+
+  const buffer = await readAll(stream.getReader());
+
+  t.deepEqual(buffer, new Uint8Array(0));
 });
 
 async function readAll(reader) {

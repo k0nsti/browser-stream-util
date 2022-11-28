@@ -11,7 +11,7 @@
   },
   "sideEffects": false,
   "exports": {
-    ".": "./src/string2stream.mjs"
+    ".": "./src/util.mjs"
   },
   "contributors": [
     {
