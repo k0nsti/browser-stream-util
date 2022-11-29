@@ -6,7 +6,7 @@
  */
 export function string2Stream(str, encoder = new TextEncoder()) {
   return new ReadableStream({
-    async pull(controller) {
+    start(controller) {
       controller.enqueue(encoder.encode(str));
       controller.close();
     }
@@ -15,7 +15,7 @@ export function string2Stream(str, encoder = new TextEncoder()) {
 
 /**
  * Read stream content into a string
- * @param {*} stream
+ * @param {ReadableStream} stream
  * @returns {string}
  */
 export async function stream2String(stream, decoder = new TextDecoder()) {
@@ -45,7 +45,7 @@ export async function stream2String(stream, decoder = new TextDecoder()) {
  */
 export function emptyStream() {
   return new ReadableStream({
-    async pull(controller) {
+    start(controller) {
       controller.close();
     }
   });
