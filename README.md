@@ -19,13 +19,25 @@ utility functions for browser streams
 
 ### Table of Contents
 
-*   [string2Stream](#string2stream)
+*   [iteratorToStream](#iteratortostream)
     *   [Parameters](#parameters)
-*   [stream2String](#stream2string)
+*   [stringToStream](#stringtostream)
     *   [Parameters](#parameters-1)
+*   [streamToString](#streamtostring)
+    *   [Parameters](#parameters-2)
 *   [emptyStream](#emptystream)
 
-## string2Stream
+## iteratorToStream
+
+Converts an iterator into a stream.
+
+### Parameters
+
+*   `iterator` **(AsyncIterator<[UInt8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)> | Iterator<[UInt8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)>)**&#x20;
+
+Returns **ReadableStream**&#x20;
+
+## stringToStream
 
 Encodes a string into a stream.
 
@@ -36,13 +48,13 @@ Encodes a string into a stream.
 
 Returns **ReadableStream**&#x20;
 
-## stream2String
+## streamToString
 
 Read stream content into a string
 
 ### Parameters
 
-*   `stream` **any**&#x20;
+*   `stream` **ReadableStream**&#x20;
 *   `decoder`   (optional, default `new TextDecoder()`)
 
 Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
