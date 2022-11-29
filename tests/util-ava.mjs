@@ -1,7 +1,7 @@
 import test from "ava";
-import { string2Stream, emptyStream } from "browser-stream-util";
+import { string2Stream, stream2String, emptyStream } from "browser-stream-util";
 
-test("string2Stream", async (t) => {
+test("string2Stream", async t => {
   const stream = string2Stream("ABCD");
 
   const buffer = await readAll(stream.getReader());
@@ -9,7 +9,11 @@ test("string2Stream", async (t) => {
   t.deepEqual(buffer, new Uint8Array([65, 66, 67, 68]));
 });
 
-test("emptyStream", async (t) => {
+test("stream2String", async t => {
+  t.is(await stream2String(string2Stream("ABCD")), "ABCD");
+});
+
+test("emptyStream", async t => {
   const stream = emptyStream();
 
   const buffer = await readAll(stream.getReader());
