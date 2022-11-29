@@ -1,3 +1,23 @@
+
+/**
+ * Converts an iterator into a stream.
+ * @param {AsyncIterator<UInt8Array>|Iterator<UInt8Array>} iterator 
+ * @returns {ReadableStream}
+ */
+export function iteratorToStream(iterator) {
+  return new ReadableStream({
+    async pull(controller) {
+      const { value, done } = await iterator.next();
+
+      if (done) {
+        controller.close();
+      } else {
+        controller.enqueue(value);
+      }
+    },
+  });
+}
+
 /**
  * Encodes a string into a stream.
  * @param {string} str
