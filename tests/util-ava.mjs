@@ -1,16 +1,16 @@
 import test from "ava";
-import { string2Stream, stream2String, emptyStream } from "browser-stream-util";
+import { stringToStream, streamToString, emptyStream } from "browser-stream-util";
 
-test("string2Stream", async t => {
-  const stream = string2Stream("ABCD");
+test("stringToStream", async t => {
+  const stream = stringToStream("ABCD");
 
   const buffer = await readAll(stream.getReader());
 
   t.deepEqual(buffer, new Uint8Array([65, 66, 67, 68]));
 });
 
-test("stream2String", async t => {
-  t.is(await stream2String(string2Stream("ABCD")), "ABCD");
+test("streamToString", async t => {
+  t.is(await streamToString(stringToStream("ABCD")), "ABCD");
 });
 
 test("emptyStream", async t => {

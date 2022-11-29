@@ -4,7 +4,7 @@
  * @param {TextEncoder} encoder
  * @returns {ReadableStream}
  */
-export function string2Stream(str, encoder = new TextEncoder()) {
+export function stringToStream(str, encoder = new TextEncoder()) {
   return new ReadableStream({
     start(controller) {
       controller.enqueue(encoder.encode(str));
@@ -18,7 +18,7 @@ export function string2Stream(str, encoder = new TextEncoder()) {
  * @param {ReadableStream} stream
  * @returns {string}
  */
-export async function stream2String(stream, decoder = new TextDecoder()) {
+export async function streamToString(stream, decoder = new TextDecoder()) {
   const reader = stream.getReader();
 
   let buffer = new Uint8Array();
