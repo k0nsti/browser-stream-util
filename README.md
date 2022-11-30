@@ -25,6 +25,8 @@ utility functions for browser streams
     *   [Parameters](#parameters-1)
 *   [streamToString](#streamtostring)
     *   [Parameters](#parameters-2)
+*   [streamToUint8Array](#streamtouint8array)
+    *   [Parameters](#parameters-3)
 *   [emptyStream](#emptystream)
 
 ## iteratorToStream
@@ -58,6 +60,16 @@ Read stream content into a string
 *   `decoder`   (optional, default `new TextDecoder()`)
 
 Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+
+## streamToUint8Array
+
+Read stream content into a Uint8Array
+
+### Parameters
+
+*   `stream` **ReadableStream**&#x20;
+
+Returns **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)**&#x20;
 
 ## emptyStream
 
