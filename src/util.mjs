@@ -34,7 +34,7 @@ export function stringToStream(str, encoder = new TextEncoder()) {
 }
 
 /**
- * Read stream content into a string
+ * Read stream content into a string.
  * @param {ReadableStream} stream
  * @returns {string}
  */
@@ -43,7 +43,7 @@ export async function streamToString(stream, decoder = new TextDecoder()) {
 }
 
 /**
- * Read stream content into a Uint8Array
+ * Read stream content into a Uint8Array.
  * @param {ReadableStream} stream
  * @returns {Uint8Array}
  */
@@ -69,7 +69,7 @@ export async function streamToUint8Array(stream) {
 }
 
 /**
- * Delivers a stream with no data
+ * Delivers a zero length stream with no data.
  * @returns {ReadableStream}
  */
 export function emptyStream() {
