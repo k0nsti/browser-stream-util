@@ -39,6 +39,15 @@ export function stringToStream(str, encoder = new TextEncoder()) {
  * @returns {string}
  */
 export async function streamToString(stream, decoder = new TextDecoder()) {
+  return decoder.decode(await streamToUint8Array(stream));
+}
+
+/**
+ * Read stream content into a Uint8Array
+ * @param {ReadableStream} stream
+ * @returns {Uint8Array}
+ */
+export async function streamToUint8Array(stream) {
   const reader = stream.getReader();
 
   let buffer = new Uint8Array();
@@ -56,7 +65,7 @@ export async function streamToString(stream, decoder = new TextDecoder()) {
     buffer = newBuffer;
   }
 
-  return decoder.decode(buffer);
+  return buffer;
 }
 
 /**
