@@ -1,7 +1,7 @@
 
 /**
  * Converts an iterator into a stream.
- * @param {AsyncIterator<UInt8Array>|Iterator<UInt8Array>} iterator 
+ * @param {AsyncIterator<Uint8Array>|Iterator<Uint8Array>} iterator 
  * @returns {ReadableStream}
  */
 export function iteratorToStream(iterator) {
