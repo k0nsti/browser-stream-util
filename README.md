@@ -35,7 +35,7 @@ Converts an iterator into a stream.
 
 ### Parameters
 
-*   `iterator` **(AsyncIterator<[UInt8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)> | Iterator<[UInt8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)>)**&#x20;
+*   `iterator` **(AsyncIterator<[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)> | Iterator<[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)>)**&#x20;
 
 Returns **ReadableStream**&#x20;
 
@@ -52,7 +52,7 @@ Returns **ReadableStream**&#x20;
 
 ## streamToString
 
-Read stream content into a string
+Read stream content into a string.
 
 ### Parameters
 
@@ -63,7 +63,7 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ## streamToUint8Array
 
-Read stream content into a Uint8Array
+Read stream content into a Uint8Array.
 
 ### Parameters
 
@@ -73,7 +73,7 @@ Returns **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Referen
 
 ## emptyStream
 
-Delivers a stream with no data
+Delivers a zero length stream with no data.
 
 Returns **ReadableStream**&#x20;
 
