@@ -19,13 +19,13 @@ test("iteratorToStream async", async t => {
       new Uint8Array([65]),
       new Uint8Array([66]),
       new Uint8Array([67]),
-      new Uint8Array([68])
+      new Uint8Array([68,69,70])
     ])
   );
 
   t.deepEqual(
     await streamToUint8Array(stream),
-    new Uint8Array([65, 66, 67, 68])
+    new Uint8Array([65, 66, 67, 68, 69, 70])
   );
 });
 
