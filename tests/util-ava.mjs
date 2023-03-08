@@ -7,13 +7,13 @@ import {
   emptyStream
 } from "browser-stream-util";
 
-test("iteratorToStream async", async t => {
-  async function* it(chunks) {
-    for (const c of chunks) {
-      yield c;
-    }
+function* it(chunks) {
+  for (const c of chunks) {
+    yield c;
   }
+}
 
+test("iteratorToStream async", async t => {
   const stream = iteratorToStream(
     it([
       new Uint8Array([65]),
@@ -30,12 +30,6 @@ test("iteratorToStream async", async t => {
 });
 
 test("iteratorToStream", async t => {
-  function* it(chunks) {
-    for (const c of chunks) {
-      yield c;
-    }
-  }
-
   const stream = iteratorToStream(
     it([
       new Uint8Array([65]),
