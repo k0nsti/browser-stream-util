@@ -2,6 +2,7 @@ import test from "ava";
 import {
   iteratorToStream,
   stringToStream,
+  uint8ToStream,
   streamToString,
   streamToUint8Array,
   emptyStream
@@ -61,6 +62,10 @@ test("stringToStream", async t => {
 
 test("streamToString", async t => {
   t.is(await streamToString(stringToStream("ABCD")), "ABCD");
+});
+
+test("uint8ToStream", async t => {
+  t.is(await streamToString(uint8ToStream([65, 66, 67, 68])), "ABCD");
 });
 
 test("emptyStream", async t => {

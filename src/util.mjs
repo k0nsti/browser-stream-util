@@ -34,6 +34,20 @@ export function stringToStream(str, encoder = new TextEncoder()) {
 }
 
 /**
+ * Encodes a uint8 array into a stream.
+ * @param {Uint8Array} array
+ * @returns {ReadableStream}
+ */
+export function uint8ToStream(array) {
+  return new ReadableStream({
+    start(controller) {
+      controller.enqueue(array);
+      controller.close();
+    }
+  });
+}
+
+/**
  * Read stream content into a string.
  * @param {ReadableStream} stream
  * @returns {string}
