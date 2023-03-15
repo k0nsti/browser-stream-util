@@ -8,7 +8,7 @@
   "exports": {
     ".": "./src/util.mjs"
   },
-  "description": "utility functions for browser streams",
+  "description": "utility functions for web streams",
   "keywords": [
     "stream",
     "util"
