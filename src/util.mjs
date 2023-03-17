@@ -1,6 +1,6 @@
 
 /**
- * Converts an iterator into a stream.
+ * Converts an iterator into a web stream.
  * @param {AsyncIterator<Uint8Array>|Iterator<Uint8Array>} iterator 
  * @returns {ReadableStream}
  */
@@ -19,7 +19,7 @@ export function iteratorToStream(iterator) {
 }
 
 /**
- * Encodes a string into a stream.
+ * Encodes a string into a web stream.
  * @param {string} str
  * @param {TextEncoder} encoder
  * @returns {ReadableStream}
@@ -34,7 +34,7 @@ export function stringToStream(str, encoder = new TextEncoder()) {
 }
 
 /**
- * Encodes a uint8 array into a stream.
+ * Encodes a uint8 array into a web stream.
  * @param {Uint8Array} array
  * @returns {ReadableStream}
  */
@@ -48,7 +48,7 @@ export function uint8ToStream(array) {
 }
 
 /**
- * Read stream content into a string.
+ * Reads web stream content into a string.
  * @param {ReadableStream} stream
  * @returns {string}
  */
@@ -57,7 +57,7 @@ export async function streamToString(stream, decoder = new TextDecoder()) {
 }
 
 /**
- * Read stream content into a Uint8Array.
+ * Reads web stream content into a Uint8Array.
  * @param {ReadableStream} stream
  * @returns {Uint8Array}
  */
@@ -83,7 +83,7 @@ export async function streamToUint8Array(stream) {
 }
 
 /**
- * Delivers a zero length stream with no data.
+ * Delivers a zero length web stream with no data.
  * @returns {ReadableStream}
  */
 export function emptyStream() {
