@@ -35,7 +35,7 @@ utility functions for web streams
 
 ## iteratorToStream
 
-Converts an iterator into a stream.
+Converts an iterator into a web stream.
 
 ### Parameters
 
@@ -45,7 +45,7 @@ Returns **ReadableStream**&#x20;
 
 ## stringToStream
 
-Encodes a string into a stream.
+Encodes a string into a web stream.
 
 ### Parameters
 
@@ -56,7 +56,7 @@ Returns **ReadableStream**&#x20;
 
 ## uint8ToStream
 
-Encodes a uint8 array into a stream.
+Encodes a uint8 array into a web stream.
 
 ### Parameters
 
@@ -66,7 +66,7 @@ Returns **ReadableStream**&#x20;
 
 ## streamToString
 
-Read stream content into a string.
+Reads web stream content into a string.
 
 ### Parameters
 
@@ -77,7 +77,7 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ## streamToUint8Array
 
-Read stream content into a Uint8Array.
+Reads web stream content into a Uint8Array.
 
 ### Parameters
 
@@ -87,7 +87,7 @@ Returns **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Referen
 
 ## emptyStream
 
-Delivers a zero length stream with no data.
+Delivers a zero length web stream with no data.
 
 Returns **ReadableStream**&#x20;
 
