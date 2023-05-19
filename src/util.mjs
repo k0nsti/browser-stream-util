@@ -50,7 +50,7 @@ export function uint8ToStream(array) {
 /**
  * Reads web stream content into a string.
  * @param {ReadableStream} stream
- * @returns {string}
+ * @returns {Promise<string>}
  */
 export async function streamToString(stream, decoder = new TextDecoder()) {
   return decoder.decode(await streamToUint8Array(stream));
@@ -59,7 +59,7 @@ export async function streamToString(stream, decoder = new TextDecoder()) {
 /**
  * Reads web stream content into a Uint8Array.
  * @param {ReadableStream} stream
- * @returns {Uint8Array}
+ * @returns {Promise<Uint8Array>}
  */
 export async function streamToUint8Array(stream) {
   const reader = stream.getReader();
