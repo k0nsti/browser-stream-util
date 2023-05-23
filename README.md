@@ -73,7 +73,7 @@ Reads web stream content into a string.
 *   `stream` **ReadableStream**&#x20;
 *   `decoder`   (optional, default `new TextDecoder()`)
 
-Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**&#x20;
 
 ## streamToUint8Array
 
@@ -83,7 +83,7 @@ Reads web stream content into a Uint8Array.
 
 *   `stream` **ReadableStream**&#x20;
 
-Returns **[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)**&#x20;
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)>**&#x20;
 
 ## emptyStream
 
