@@ -69,4 +69,12 @@ jobs:
           path-to-lcov: build/coverage/lcov.info
           parallel-finished: true
 name: CI
-'on': push
+'on':
+  push:
+    branches:
+      - master
+      - next
+  pull_request:
+    branches:
+      - master
+      - next
