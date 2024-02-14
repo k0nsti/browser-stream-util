@@ -5,13 +5,13 @@
     "access": "public",
     "provenance": true
   },
+  "types": "./types/util.d.mts",
   "exports": {
     ".": {
-      "types": "./types/util.d.mts",
-      "default": "./src/util.mjs"
+      "default": "./src/util.mjs",
+      "types": "./types/util.d.mts"
     }
   },
-  "types": "./types/util.d.mts",
   "description": "utility functions for web streams",
   "keywords": [
     "stream",
@@ -31,7 +31,7 @@
     "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
     "docs": "documentation readme --section=API ./src/**/*.mjs",
-    "lint": "npm run lint:tsc && npm run lint:docs",
+    "lint": "npm run lint:docs && npm run lint:tsc",
     "lint:docs": "documentation lint ./src/**/*.mjs",
     "lint:tsc": "tsc --allowJs --checkJs --noEmit -t esnext -m esnext --module nodenext --moduleResolution nodenext ./src**/*.mjs"
   },
