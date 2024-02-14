@@ -5,13 +5,13 @@
     "access": "public",
     "provenance": true
   },
+  "types": "./types/util.d.mts",
   "exports": {
     ".": {
-      "types": "./types/util.d.mts",
-      "default": "./src/util.mjs"
+      "default": "./src/util.mjs",
+      "types": "./types/util.d.mts"
     }
   },
-  "types": "./types/util.d.mts",
   "description": "utility functions for web streams",
   "keywords": [
     "stream",
