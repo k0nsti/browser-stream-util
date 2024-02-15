@@ -60,10 +60,6 @@ jobs:
           path-to-lcov: build/coverage/lcov.info
           parallel: true
         continue-on-error: true
-    strategy:
-      matrix:
-        node-version:
-          - 20.11.1
   finish:
     needs:
       - test-node
