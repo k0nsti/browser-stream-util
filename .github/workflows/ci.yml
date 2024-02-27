@@ -33,7 +33,7 @@ jobs:
       - run: npm ci
       - run: npx semantic-release
         env:
-          CI: 'true'
+          CI: "true"
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PKGBUILD_PUBLISH: ${{ secrets.PKGBUILD_PUBLISH }}
@@ -77,7 +77,7 @@ jobs:
           path-to-lcov: build/coverage/lcov.info
           parallel-finished: true
 name: CI
-'on':
+on:
   push:
     branches:
       - master
