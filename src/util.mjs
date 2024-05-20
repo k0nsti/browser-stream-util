@@ -21,7 +21,7 @@ export function iteratorToStream(iterator) {
 /**
  * Encodes a string into a ReadableStream.
  * @param {string} str
- * @param {TextEncoder} encoder
+ * @param {TextEncoder} [encoder]
  * @returns {ReadableStream}
  */
 export function stringToStream(str, encoder = new TextEncoder()) {
@@ -50,6 +50,7 @@ export function uint8ToStream(array) {
 /**
  * Reads web stream content into a string.
  * @param {ReadableStream} stream
+ * @param {TextDecoder} [decoder]
  * @returns {Promise<string>}
  */
 export async function streamToString(stream, decoder = new TextDecoder()) {
