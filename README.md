@@ -51,7 +51,7 @@ Encodes a string into a ReadableStream.
 ### Parameters
 
 *   `str` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
-*   `encoder` **[TextEncoder](https://developer.mozilla.org/docs/Web/API/TextEncoder)**  (optional, default `new TextEncoder()`)
+*   `encoder` **[TextEncoder](https://developer.mozilla.org/docs/Web/API/TextEncoder)?**  (optional, default `new TextEncoder()`)
 
 Returns **ReadableStream**&#x20;
 
@@ -72,7 +72,7 @@ Reads web stream content into a string.
 ### Parameters
 
 *   `stream` **ReadableStream**&#x20;
-*   `decoder`   (optional, default `new TextDecoder()`)
+*   `decoder` **[TextDecoder](https://developer.mozilla.org/docs/Web/API/TextDecoder)?**  (optional, default `new TextDecoder()`)
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**&#x20;
 
