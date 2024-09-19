@@ -38,7 +38,7 @@ jobs:
           parallel: true
         continue-on-error: true
       - name: prepare node
-        uses: actions/setup-node@v4.0.3
+        uses: actions/setup-node@v4.0.4
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
@@ -78,7 +78,7 @@ jobs:
         env:
           BROWSER: ${{ matrix.browser }}
       - name: prepare node
-        uses: actions/setup-node@v4.0.3
+        uses: actions/setup-node@v4.0.4
         with:
           node-version: 22.9.0
           cache: npm
@@ -119,7 +119,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PKGBUILD_PUBLISH: ${{ secrets.PKGBUILD_PUBLISH }}
       - name: prepare node
-        uses: actions/setup-node@v4.0.3
+        uses: actions/setup-node@v4.0.4
         with:
           node-version: 22.9.0
           cache: npm
