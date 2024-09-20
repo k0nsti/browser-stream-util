@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4.1.7
-      - uses: actions/setup-node@v4.0.3
+      - uses: actions/setup-node@v4.0.4
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
@@ -65,7 +65,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4.1.7
-      - uses: actions/setup-node@v4.0.3
+      - uses: actions/setup-node@v4.0.4
         with:
           node-version: 22.7.0
           cache: npm
@@ -104,7 +104,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4.1.7
-      - uses: actions/setup-node@v4.0.3
+      - uses: actions/setup-node@v4.0.4
         with:
           node-version: 22.7.0
           cache: npm
