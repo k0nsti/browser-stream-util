@@ -19,7 +19,7 @@ jobs:
           - 22.9.0
     steps:
       - name: checkout
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.1
       - uses: actions/setup-node@v4.0.4
         with:
           node-version: ${{ matrix.node-version }}
@@ -64,7 +64,7 @@ jobs:
           - firefox
     steps:
       - name: checkout
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.1
       - uses: actions/setup-node@v4.0.4
         with:
           node-version: 22.7.0
@@ -103,7 +103,7 @@ jobs:
       id-token: write
     steps:
       - name: checkout
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.1
       - uses: actions/setup-node@v4.0.4
         with:
           node-version: 22.7.0
