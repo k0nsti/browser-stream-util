@@ -16,5 +16,13 @@
       streamToUint8Array,
       emptyStream
     } from "browser-stream-util";
+
+    async function streamUtil1() {
+      const stream = stringToStream("ABCD");
+      const array = await streamToUint8Array(stream);
+      console.log(array);
+    }
+
+    streamUtil1();
   </script>
 </html>
