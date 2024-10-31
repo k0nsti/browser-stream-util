@@ -39,6 +39,10 @@
     "lint:typescript": "tsc --allowJs --checkJs --noEmit --resolveJsonModule --target es2024 --lib es2024 -m esnext --module nodenext --moduleResolution nodenext ./src**/*.mjs"
   },
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/release-notes-generator": "^14.0.1",
     "@types/readable-stream": "^4.0.15",
     "@types/text-encoding": "^0.0.39",
     "ava": "^6.2.0",
@@ -69,11 +73,60 @@
     "example": true,
     "frontend": true
   },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild --publish dist"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "dist/*.deb",
+              "label": "any Debian Package"
+            },
+            {
+              "path": "dist/*any.pkg.*",
+              "label": "any Arch Linux Package"
+            },
+            {
+              "path": "dist/*x86_64.pkg.*",
+              "label": "x86_64 Arch Linux Package"
+            },
+            {
+              "path": "dist/*aarch64.pkg.*",
+              "label": "arm64 Arch Linux Package"
+            },
+            {
+              "path": "dist/*noarch.rpm",
+              "label": "noarch RPM"
+            },
+            {
+              "path": "dist/*x86_64.rpm",
+              "label": "x86_64 RPM"
+            },
+            {
+              "path": "dist/*aarch64.rpm",
+              "label": "arm64 RPM"
+            }
+          ]
+        }
+      ]
+    ]
+  },
   "template": {
     "inheritFrom": [
       "arlac77/template-arlac77-github",
       "arlac77/template-browser-ava",
       "arlac77/template-javascript-component",
+      "arlac77/template-npm-pkgbuild",
       "arlac77/template-typescript"
     ]
   }
