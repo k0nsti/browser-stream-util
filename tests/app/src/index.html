@@ -6,7 +6,11 @@
     <meta name="description" content="track financial assets over time" />
     <title>Stream Util</title>
   </head>
-  <body id="body"></body>
+  <body id="body">
+    <div id="s1">
+
+    </div>
+  </body>
   <script type="module">
     import {
       iteratorToStream,
@@ -18,9 +22,9 @@
     } from "browser-stream-util";
 
     async function streamUtil1() {
-      const stream = stringToStream("ABCD");
-      const array = await streamToUint8Array(stream);
-      console.log(array);
+      const array = await streamToUint8Array(stringToStream("ABCD"));
+      const s1 = document.getElementById('s1');
+      s1.innerText = array;
     }
 
     streamUtil1();

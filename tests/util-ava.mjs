@@ -53,10 +53,8 @@ test("iteratorToStream", async t => {
 
 test("stringToStream", async t => {
   const stream = stringToStream("ABCD");
-
-  const buffer = await streamToUint8Array(stream);
-
-  t.deepEqual(buffer, new Uint8Array([65, 66, 67, 68]));
+  const array = await streamToUint8Array(stream);
+  t.deepEqual(array, new Uint8Array([65, 66, 67, 68]));
 });
 
 test("streamToString", async t => {
@@ -64,7 +62,7 @@ test("streamToString", async t => {
 });
 
 test("uint8ToStream", async t => {
-  t.is(await streamToString(uint8ToStream([65, 66, 67, 68])), "ABCD");
+  t.is(await streamToString(uint8ToStream(new Uint8Array([65, 66, 67, 68]))), "ABCD");
 });
 
 test("emptyStream", async t => {
