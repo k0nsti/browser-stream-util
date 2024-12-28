@@ -8,8 +8,8 @@
   "types": "./types/util.d.mts",
   "exports": {
     ".": {
-      "default": "./src/util.mjs",
-      "types": "./types/util.d.mts"
+      "types": "./types/util.d.mts",
+      "default": "./src/util.mjs"
     }
   },
   "description": "utility functions for web streams",
