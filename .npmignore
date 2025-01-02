@@ -7,3 +7,4 @@ doc
 .github
 dist
 pkg
+tsconfig.json
