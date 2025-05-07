@@ -38,13 +38,6 @@
     "lint:docs": "documentation lint ./src**/*.mjs",
     "lint:typescript": "tsc --allowJs --checkJs --noEmit --resolveJsonModule --target esnext -m esnext --module nodenext --moduleResolution nodenext ./src**/*.mjs"
   },
-  "dependencies": {
-    "ava": "^6.3.0",
-    "content-entry": "^13.0.4",
-    "fetch-rate-limit-util": "^4.4.1",
-    "repository-provider": "^35.2.28",
-    "repository-provider-test-support": "^3.1.9"
-  },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.0.3",
