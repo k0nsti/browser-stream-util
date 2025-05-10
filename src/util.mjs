@@ -1,7 +1,6 @@
-
 /**
  * Converts an iterator into a ReadableStream.
- * @param {AsyncIterator<Uint8Array>|Iterator<Uint8Array>} iterator 
+ * @param {AsyncIterator<Uint8Array>|Iterator<Uint8Array>} iterator
  * @returns {ReadableStream}
  */
 export function iteratorToStream(iterator) {
@@ -14,7 +13,7 @@ export function iteratorToStream(iterator) {
       } else {
         controller.enqueue(value);
       }
-    },
+    }
   });
 }
 
@@ -60,6 +59,41 @@ export async function streamToString(stream, decoder = new TextDecoder()) {
 /**
  * Reads web stream content into a Uint8Array.
  * @param {ReadableStream} stream
+ * @param {number} maxByteLength
+ * @returns {Promise<Uint8Array>}
+ */
+/*
+export async function streamToUint8Array(
+  stream,
+  maxByteLength = 1024 * 1024 * 10
+) {
+  const reader = stream.getReader();
+  const data = new ArrayBuffer(0, { maxByteLength });
+  const array = new Uint8Array(data);
+
+  while (true) {
+    const { done, value } = await reader.read();
+
+    if (done) {
+      break;
+    }
+
+    const lastLength = array.length;
+
+    data.resize(array.length + value.length);
+
+    array.set(value, lastLength);
+  }
+
+  reader.releaseLock();
+
+  return array;
+}
+*/
+
+/**
+ * Reads web stream content into a Uint8Array.
+ * @param {ReadableStream} stream
  * @returns {Promise<Uint8Array>}
  */
 export async function streamToUint8Array(stream) {
@@ -79,6 +113,8 @@ export async function streamToUint8Array(stream) {
     newBuffer.set(value, buffer.length);
     buffer = newBuffer;
   }
+
+  reader.releaseLock();
 
   return buffer;
 }

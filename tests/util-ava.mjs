@@ -62,7 +62,10 @@ test("streamToString", async t => {
 });
 
 test("uint8ToStream", async t => {
-  t.is(await streamToString(uint8ToStream(new Uint8Array([65, 66, 67, 68]))), "ABCD");
+  t.is(
+    await streamToString(uint8ToStream(new Uint8Array([65, 66, 67, 68]))),
+    "ABCD"
+  );
 });
 
 test("emptyStream", async t => {
