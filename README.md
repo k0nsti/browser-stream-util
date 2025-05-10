@@ -32,6 +32,8 @@ utility functions for web streams
     *   [Parameters](#parameters-3)
 *   [streamToUint8Array](#streamtouint8array)
     *   [Parameters](#parameters-4)
+*   [streamToUint8Array](#streamtouint8array-1)
+    *   [Parameters](#parameters-5)
 *   [emptyStream](#emptystream)
 
 ## iteratorToStream
@@ -75,6 +77,17 @@ Reads web stream content into a string.
 *   `decoder` **[TextDecoder](https://developer.mozilla.org/docs/Web/API/TextDecoder)?**  (optional, default `new TextDecoder()`)
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**&#x20;
+
+## streamToUint8Array
+
+Reads web stream content into a Uint8Array.
+
+### Parameters
+
+*   `stream` **ReadableStream**&#x20;
+*   `maxByteLength` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**&#x20;
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)>**&#x20;
 
 ## streamToUint8Array
 
