@@ -25,7 +25,7 @@ export default defineConfig(async ({ command, mode }) => {
     root: "tests/app/src",
     plugins: [
       compression({
-        algorithm: "brotliCompress",
+        algorithms: ["brotliCompress"],
         exclude: [
           /\.(map)$/,
           /\.(br)$/,
