@@ -82,14 +82,6 @@ jobs:
           node-version: 24.11.1
       - name: install
         run: npm ci
-      - name: release
-        run: npx semantic-release
-        env:
-          CI: "true"
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PKGBUILD_PUBLISH: ${{ secrets.PKGBUILD_PUBLISH }}
-          PKGEXT: .pkg.tar.xz
       - name: install dependencies
         run: |
           if [ ! -f /usr/bin/pacman ]
@@ -99,6 +91,14 @@ jobs:
           wget https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
           sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
           fi
+      - name: release
+        run: npx semantic-release
+        env:
+          CI: "true"
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PKGBUILD_PUBLISH: ${{ secrets.PKGBUILD_PUBLISH }}
+          PKGEXT: .pkg.tar.xz
   finish:
     needs:
       - test-node
